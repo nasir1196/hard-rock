@@ -5,6 +5,7 @@ const searchSongs = async () => {
     lyricContainer.innerHTML = '';
     const getError = document.getElementById('error-massage');
     getError.innerText = '';
+    document.getElementById('input-song').value = '';
     const url = `https://api.lyrics.ovh/suggest/${getInput}`;
     try {
         const promise = await fetch(url);
