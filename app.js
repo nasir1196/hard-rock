@@ -9,7 +9,7 @@ const searchSongs = async () => {
     songContainer.innerHTML = "";
     document.getElementById('input-song').value = '';
     loadingSpinner();
-    const url = `http://api.lyrics.ovh/suggest/${getInput}`;
+    const url = `https://api.lyrics.ovh/suggest/${getInput}`;
     try {
         const promise = await fetch(url);
         const data = await promise.json();
@@ -53,7 +53,7 @@ const displaySongs = (songs) => {
 
 
 const getSongLyric = async (artist, title) => {
-    const url = `http://api.lyrics.ovh/v1/${artist}/${title}`;
+    const url = `https://api.lyrics.ovh/v1/${artist}/${title}`;
     try {
         const promise = await fetch(url);
         const data = await promise.json();
