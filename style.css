@@ -38,3 +38,6 @@ body{
     background: rgba(255, 255, 255, 0.2);
     border-radius: 15px;
 }
+#load-spinner{
+    width: 15px;
+}

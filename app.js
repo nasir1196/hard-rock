@@ -5,7 +5,10 @@ const searchSongs = async () => {
     lyricContainer.innerHTML = '';
     const getError = document.getElementById('error-massage');
     getError.innerText = '';
+    const songContainer = document.getElementById('song-container');
+    songContainer.innerHTML = "";
     document.getElementById('input-song').value = '';
+    loadingSpinner();
     const url = `https://api.lyrics.ovh/suggest/${getInput}`;
     try {
         const promise = await fetch(url);
@@ -15,6 +18,7 @@ const searchSongs = async () => {
 
     catch (error) {
         displayErrorMassage("Something went wrong load this song!! please try again later");
+        loadingSpinner();
     }
 
 }
@@ -40,6 +44,7 @@ const displaySongs = (songs) => {
         </div>
         `;
         songContainer.appendChild(songDiv);
+        loadingSpinner();
     });
 }
 
@@ -53,6 +58,7 @@ const getSongLyric = async (artist, title) => {
     }
     catch (error) {
         displayErrorMassage("Something went wrong load lyrics!! please try again later");
+        loadingSpinner();
     }
 
 
@@ -68,4 +74,9 @@ const displayLyric = (lyric) => {
 const displayErrorMassage = (error) => {
     const getError = document.getElementById('error-massage');
     getError.innerText = error;
+}
+
+const loadingSpinner = () => {
+    const spinner = document.getElementById('load-spinner');
+    spinner.classList.toggle('d-none');
 }
