@@ -41,3 +41,8 @@ body{
 #load-spinner{
     width: 15px;
 }
+#song-img img{
+    border-radius: 80px;
+    margin: auto;
+    border:5px solid #d7da5f;
+}

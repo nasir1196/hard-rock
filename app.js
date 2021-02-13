@@ -47,7 +47,7 @@ const displaySongs = (songs) => {
                 <source src="${song.preview}" type="audio/ogg">
             </audio>
         </div>
-        <div class="col-md-2">
+        <div id="song-img" class="col-md-2">
             <img src="${song.album.cover}" alt="">
         </div>
         <div class="col-md-4 text-md-right text-center">
